@@ -17,7 +17,7 @@ load_dotenv()
 #se esta entrando en la base de datos con usuario: root y contraseña: 1234, en el puerto de conexion de MySQL 3306
 SQLALCHEMY_DATABASE_URL = os.getenv("SQLALCHEMY_DATABASE_URL")
 
-
+# SQLALCHEMY_DATABASE_URL = "mysql+pymysql://avnadmin:AVNS_lNzvKQmQj_ss_2wdKBN@mysql-f8cb4f6-utxicotepec-4d57.e.aivencloud.com:22827/defaultdb"
 
 
 #Crear el motor de base de datos
