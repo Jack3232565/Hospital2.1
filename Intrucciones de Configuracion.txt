@@ -1,0 +1,98 @@
+Pasos para python dentro del proyecto
+
+-- Crea la caprpet con MKDIR
+    EntornoVirtualApi
+
+-- Crear el entorno virtual
+    py -m venv EntornoVirtualAPI
+
+-- Selecciona el entorno virtual en el buscador con 
+
+>Python  
+busca la ruta del 
+
+-- Crear el archivo 
+ app.py
+
+-- Ejecuta el archivo con 
+py app.py
+
+-- instala las librerias 
+pip install fastapi uvicorn
+
+nota: revisar si Python esta correctamente Instalado
+para evitar problemas de instalacion de la libreria
+
+-- Dentro del archivo app.py igresa la siguinte indicaciones
+
+from fastapi import FastAPI -- se imiporta la libreria FastAPI
+
+app = FastAPI()
+print("Bienvenido a mi aplicacion")
+
+-- ejecuta el archivo app.py con
+
+py app.py 
+
+-- ejecuta uvicorn app:app
+cd
+-- En la capeta Routes creamos un nuevo archivo llamado personas.py
+
+from fastapi import APIRouter
+
+persona = APIRouter()
+@persona.get("/persona") -- Creamos la ruta personas
+
+def helloworld():
+    return
+
+
+-- En el archivo app.py importamos router.personas
+
+
+from fastapi import FastAPI 
+from routes.persona import persona -- se importa el archivo persona que viene del route
+
+app = FastAPI()
+app.iclude_router(persona)
+
+print("Bienvenido a mi aplicacion")
+
+--------------------------------------------------------
+-- Activa el entorno virtual con powershell desde la ruta ubicada en la carpeta Back-End
+
+.\EntornoVirtualApi\Scripts\activate
+
+-- Reiniciar el la app para que se hagan los cambios en automatico
+
+uvicorn app:app --reload
+---------------------------------------------------------
+
+-- Se instala el mapeador de las tablas creadas en la base de datos 
+-- El comando pip install SQLAlchemy se utiliza para instalar el paquete SQLAlchemy en tu entorno de Python.
+-- SQLAlchemy es una biblioteca de SQL y ORM (Object-Relational Mapping) que facilita el trabajo con bases de datos en aplicaciones Python. 
+pip install SQLAlchemy
+
+-- PyMySQL es una biblioteca que permite a los programas de Python conectarse y interactuar con bases 
+-- de datos MySQL. Aquí hay algunas de las funcionalidades clave de PyMySQL
+pip install PyMySQL
+
+
+
+-- Creacion de la base de datos automatica 
+-- NOTA: No se ha realizado este paso aun 
+
+ # Instala Alembic si no está instalado
+pip install alembic
+
+# Inicializa Alembic en tu proyecto
+alembic init alembic
+
+# Configura el archivo alembic.ini con la URL de tu base de datos
+
+# Genera las migraciones basadas en los cambios del modelo
+alembic revision --autogenerate -m "Update modelos"
+
+# Aplica las migraciones a la base de datos
+alembic upgrade head y estan funcionando la base de datos con el api 
+

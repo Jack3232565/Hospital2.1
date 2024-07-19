@@ -1,0 +1,42 @@
+
+# Clonar el repositorio
+git clone https://github.com/Jack3232565/Back-End-Hospital2.0.git
+
+# Navegar al directorio del repositorio
+cd nombre del repositorio
+
+# Añadir archivos al índice de Git
+git add .
+
+# Realizar un commit
+git commit -m "Initial commit"
+
+# Subir cambios al repositorio remoto
+git push origin main
+
+
+
+** Crea el entorno virtual 
+python -m venv EnVirtualAPI
+
+**Entra a la carpeta del entorno y activalo
+.\EnVirtualAPI\Scripts\activate  
+
+** instala 
+pip install uvicorn fastapi sqlalchemy
+
+** instala todas las dependencias que necesita el proyecto
+pip install -r requirements.txt
+
+**Crea la base de datos en Mysql para este proyecto la base se llama "test"
+SQLALCHEMY_DATABSE_URL = "mysql+pymysql://root:1234@localhost:3306/test"
+esta linea de codigo se encuentra en la carpeta config/db.py
+
+** una vez asegurado de que la base esta creada arranca el proyecto
+
+**arranca el proyecto
+uvicorn app:app --reload
+
+
+** Se genera nuevamente el archivo de requirements.txt
+pip freeze > requirements.txt
